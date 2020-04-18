@@ -3,6 +3,7 @@
 </ul> -->
 
 <!-- so we pass to the component app-todo-item the item todos with the name todo -->
+<app-add-todo (addTodo)="addInTodo($event)"></app-add-todo>
 <app-todo-item
   *ngFor="let item of todos"
   [todo]="item"

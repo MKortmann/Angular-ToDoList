@@ -21,12 +21,18 @@ export class TodosComponent implements OnInit {
   }
 
   deleteInTodos(todo: Todo) {
-    // delete item in ui ---> it can be putted also inside subscribe
+    // delete item from UI ---> it can be putted also inside subscribe
     this.todos = this.todos.filter((item) => item.id !== todo.id);
 
     // delete item in server
     this.todoService.deleteTodo(todo).subscribe(() => {
       console.log('deleted in the server');
+    });
+  }
+
+  addInTodo(todo: Todo) {
+    this.todoService.addTodo(todo).subscribe((todo) => {
+      this.todos.push(todo);
     });
   }
 }
