@@ -3,4 +3,9 @@
 </ul> -->
 
 <!-- so we pass to the component app-todo-item the item todos with the name todo -->
-<app-todo-item *ngFor="let item of todos" [todo]="item"> </app-todo-item>
+<app-todo-item
+  *ngFor="let item of todos"
+  [todo]="item"
+  (deleteTodo)="deleteInTodos($event)"
+>
+</app-todo-item>
